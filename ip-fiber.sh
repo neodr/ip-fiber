@@ -8,7 +8,7 @@ function config_one_card() {
 	ip2="$2"
 	dev="$3"	
 	ip addr flush dev $dev
-	ip address add $ip dev $dev
+	ip address add $ip/24 dev $dev
 	ip route add $ip2/24 dev $dev
 	ifconfig $dev mtu 9000
 
